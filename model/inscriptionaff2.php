@@ -3,14 +3,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = $_POST['nom'];
     $email = $_POST['email'];
     $mdp = $_POST['mdp'];
-$servername ='localhost';
-$username= 'root';
-$password='';
-$dataBaseName='avis';
-$conn= new mysqli($servername, $username, $password, $dataBaseName);
-if($conn->connect_error){
-    die("connection echou�e");
-}
+    
+    session_start();
+    $_SESSION['message'] = "inscription réussi !";
+    header("Location: http://localhost/ProjetWD/connection.php");
+
+
 $sql2="SELECT email FROM client WHERE email='$email';";
 $conn->query($sql2);
 $result=$conn->query($sql2);

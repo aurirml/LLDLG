@@ -2,25 +2,25 @@
     <div class="container-4 w-container">
         <nav role="navigation" class="nav-menu-2 w-nav-menu">
             <div class="nav-link-container">
-                <a href="Carte.php" class="nav-link w-nav-link">La Carte</a>
+                <a href="../view/Carte.php" class="nav-link w-nav-link">La Carte</a>
             </div>
             <div class="nav-link-container">
-                <a href="avis.php" class="nav-link w-nav-link">Avis</a>
+                <a href="../view/avis.php" class="nav-link w-nav-link">Avis</a>
             </div>
-            <a href="index.php" aria-current="page" class="brand-3 w-nav-brand w--current">
-                <img src="assets/img/Favicon.png" class="ch-logo" width="10%" />
+            <a href="../index.php" aria-current="page" class="brand-3 w-nav-brand w--current">
+                <img src="../view/assets/img/Favicon.png" class="ch-logo" width="10%" />
             </a>
             <div class="nav-link-container">
-                <a href="panier.php" class="nav-link w-nav-link">Panier</a>
+                <a href="../view/panier.php" class="nav-link w-nav-link">Panier</a>
             </div>
             <div class="nav-link-container">
                 <?php
                 session_start();
                 if (isset($_SESSION['con'])) {
                     $nom = $_SESSION['con'];
-                ?><a href="deconnection.php" class="nav-link w-nav-link">Déconnexion</a><?php
+                ?><a href="../view/deconnection.php" class="nav-link w-nav-link">Déconnexion</a><?php
                                                                                     } else {
-                                                                                        ?><a href="connection.php" class="nav-link w-nav-link">Se Connecter</a><?php
+                                                                                        ?><a href="../controller/connection.ctrl.php" class="nav-link w-nav-link">Se Connecter</a><?php
                                                                                                                                                             }
                                                                                                                                                                 ?>
 
