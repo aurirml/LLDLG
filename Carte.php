@@ -51,7 +51,7 @@
 
     $postdata = json_encode(
         array(
-            'id_shop' => 1
+            'id_shop' => 1 
         )
     );
 
