@@ -47,7 +47,7 @@
 
 <body style="background-image: url('./assets/img/proto3-2.png');background-repeat:no-repeat;">
     <div class="container">
-        <form action="connectionaff.php" method="POST" class="connexion">
+        <form action="controller/connection.ctrl.php" method="POST" class="connexion">
             <h1>Connexion</h1>
             <div class="erreur">
             <?php

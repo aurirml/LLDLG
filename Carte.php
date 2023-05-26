@@ -45,7 +45,7 @@
 </div>
 
 
-<body background="./assets/img/proto3-2.png">
+<body background="./assets/img/proto3-2.png"> 
     <?php
     $url = "http://test.api.catering.bluecodegames.com/menu";
 

@@ -2,22 +2,14 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = $_POST['nom'];
     $mdp = $_POST['mdp'];
-$servername ='localhost';
-$username= 'root';
-$password='';
-$dataBaseName='avis';
-$conn= new mysqli($servername, $username, $password, $dataBaseName);
-if($conn->connect_error){
-    die("connection echouée");
-}
-$sql2="SELECT nom FROM client WHERE nom='$nom' AND mdp='$mdp';";
-$conn->query($sql2);
-$result=$conn->query($sql2);
 
-if(mysqli_num_rows($result)==0){
+include_once('databaseaccess.model.php');
+
+$connected = $dao->connection($nom, $mdp);
+
+if($connected == false){
     session_start();
     $_SESSION['message'] = "Nom d'utilisateur ou mot de passe incorrect(s)";
-    $conn->close();
     header("Location: http://localhost/ProjetWD/connection.php");
     exit;
 }else{
@@ -26,6 +18,5 @@ if(mysqli_num_rows($result)==0){
     $_SESSION['con'] = $nom;
     header("Location: http://localhost/ProjetWD/Carte.php");
 }
-$conn->close();
 }
 ?>
