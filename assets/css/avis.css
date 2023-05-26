@@ -1,0 +1,13 @@
+body{
+    background-color: #F9DBB8;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.avis{
+    font-size:50px;
+    font-family:Optimax;
+
+    text-align:center;
+}

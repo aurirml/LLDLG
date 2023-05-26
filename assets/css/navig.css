@@ -1,0 +1,91 @@
+.nav-link {
+
+    align-items: center;
+
+    font-family:chalkduster;
+
+    color: #4DB881;
+    font-size: 45px;
+    
+    text-align:center;
+    text-transform:uppercase;
+    
+}
+
+.w-dropdown-btn, .w-dropdown-link, .w-dropdown-toggle {
+    position: relative;
+    vertical-align: top;
+    text-decoration: none;
+    color: #222;
+    padding: 20px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    white-space:nowrap;
+}
+
+.w-dropdown-link {
+    padding: 10px 20px;
+    display: block;
+    color:#222
+}
+
+.w-dropdown-link.w--current {
+    color:#0082f3
+}
+
+.w-dropdown-link:focus {
+    outline:0
+}
+
+.ch-logo {
+    bottom: auto;
+    z-index: 50;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+}
+
+.nav-menu-2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left:4.5%;
+}
+
+.container-4 {
+    background:radial-gradient(ellipse closest-side, #F6DBB8, #F6DBB8, #FFF2E4 100%, #FFF2E4);
+}
+
+.dropdown-list-copy {
+    display: block;
+    overflow: hidden;
+    margin-left: 25px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #1b1a1a;
+    color:#f6f3f0
+}
+
+.w-dropdown-list {
+    position: absolute;
+    background: #ddd;
+    display: none;
+    min-width:100%
+}
+
+.w-dropdown-list.w--open {
+    display:block
+}
+
+.dropdown-link-1 {
+    border-bottom-left-radius: 15px;
+    color:#f6f3f0
+}
+
+.dropdown-link-1.w--current {
+    border: 1px solid #000;
+    color:#d1d1d1
+}

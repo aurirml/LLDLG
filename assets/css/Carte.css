@@ -1,0 +1,356 @@
+body{
+    background-color: #F9DBB8;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.titre{
+  text-align:center;
+  margin-left:10px;
+  margin-top:30px;
+  margin-right:20px;
+
+  font-size:30px;
+  font-family:Chalkduster;
+}
+.titre{
+  float:left;
+}
+.sous{
+  float:right;
+}
+
+.message{
+  font-size:50px;
+  font-family:Chalkduster;
+
+  text-align:center;
+}
+
+.accueil{
+  margin-top:300px;
+  text-align:center;
+  font-size:200px;
+  font-family:chalkduster;
+  opacity:1;
+}
+
+
+.espace{
+  margin-top: 45px;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.affichageplat{
+
+  width : 30%;
+  margin-top:5%;
+  margin-left:35%;
+}
+
+.resto{
+  margin-top:10px;
+  font-size:50px;
+  font-family:papyrus;
+  text-align:center;
+}
+
+.plat{
+  margin-top: 5px;
+  margin-bottom: 35px;
+
+  text-align: center;
+  font-size:70px;
+  color:#4DB881;
+  font-family: Chalkduster;
+  font-style:italic;
+}
+
+.typeplat{
+    margin-top: 45px;
+    margin-bottom: 25px;
+
+    text-align: center;
+    font-size:100px;
+    color:#4DB881;
+    font-family: Chalkduster;
+    font-style:italic;
+
+}
+
+.author{
+    font-family: papyrus;
+    font-size:20px;
+    margin-left: 10%;
+    position: fixed;
+    bottom: 15px;
+}
+
+.platcell{
+    position : relative;
+    width: 50%;
+}
+
+.nomplat img{
+  width:2.5%;
+}
+
+.events{
+  font-family: chalkduster;
+  font-size:70px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.nomplat{
+    text-align:center;
+    font-family: Optimax;
+    font-weight : bold;
+    font-size:40px;
+    position: relative;
+    left: auto;
+
+    margin-bottom:10px;
+
+  color:#4F483E;
+}
+
+.info{
+    color:black;
+    text-align: center;
+    font-family: Brush Script MT;
+    font-size:30px;
+    margin-bottom: 15px;
+}
+
+
+.prix{
+  margin-top:1%;
+  font-size:50px;
+  color:black;
+  font-family: Optimax;
+  text-align: center;
+
+}
+
+.ingredients{
+  font-size:50px;
+  font-family: Optimax;
+
+  margin-top: 1%;
+  text-align:center;
+}
+
+.taille{
+  position: relative;
+  margin: auto;
+  width:20%;
+
+  margin-top:1%;
+  font-size:50px;
+  color:black;
+  font-family: Optimax;
+align-items: center;
+}
+
+a.link{
+    text-decoration: none;
+    color:darkslategrey;
+}
+
+.carrousel{
+  margin:auto;
+  position: relative;
+  width:30%;
+  height:45%;
+
+}
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  max-width: 800px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(107,182,132,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: darkseagreen;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-top : 5px;
+  margin-bottom: 15px;
+}
+
+.active, .dot:hover {
+  background-color: darkcyan;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.tarif{
+  font-size:50px;
+  text-align:center;
+}
+
+.avis{
+  font-size:50px;
+  font-family:Optimax;
+  margin-left: 5%;
+}
+
+.note{
+  font-size:40px;
+  font-family:Optimax;
+  margin-left: 5%;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  background-color: white;
+  /*max-height: 0;
+  overflow: hidden;*/
+  display:none;
+  transition: max-height 0.2s ease-out;
+}
+
+.content.visible{
+  display:block;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+blockquote {
+  margin: 0;
+  font-size:30px;
+}
+
+blockquote p {
+  padding: 15px;
+  background: rgba(107,182,132,0.33);
+  border-radius: 5px;
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+
+blockquote p::after {
+  content: '\201D';
+}
+
+figcaption{
+  font-size: 30px;
+}
+
+.precedent{
+  font-size:50px;
+  font-family:Chalkduster;
+  text-align:center;
+  margin-top: 3%;
+}
+
+.autre{
+
+  background-color: rgba(249,219,184,0.50);
+}
