@@ -43,6 +43,8 @@
             <input type="submit" value="En créer un">
         </form>
     </div>
+
+    <?php include('footer.php') ?>
 </body>
 
 </html>

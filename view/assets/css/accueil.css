@@ -19,11 +19,3 @@ body{
     font-family:papyrus;
     text-align:center;
   }
-
-  .author{
-    font-family: papyrus;
-    font-size:20px;
-    margin-left: 10%;
-    position: fixed;
-    bottom: 15px;
-}

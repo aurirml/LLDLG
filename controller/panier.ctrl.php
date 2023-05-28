@@ -1,10 +1,9 @@
 <?php
 include_once("../model/databaseaccess.model.php");
 include("../controller/utils/sessionCheck.ctrl.php");
+include_once("../model/apiaccess.model.php");
 
-ini_set ('display_errors', 1);
-ini_set ('display_startup_errors', 1);
-error_reporting (E_ALL);
+$json = $apiclient->getAllPlat();
 
 $orders = [];
 

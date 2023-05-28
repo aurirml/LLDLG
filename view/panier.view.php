@@ -2,7 +2,7 @@
 
 <head>
     <title>La Légende de la Gastronomie</title>
-    <link rel="stylesheet" href="../view/assets/css/avis.css" />
+    <link rel="stylesheet" href="../view/assets/css/panier.css" />
     <link rel="icon" type="image/x-icon" href="../view/assets/img/Favicon.ico">
 </head>
 
@@ -11,45 +11,75 @@
 <body style="background-image: url('../view/assets/img/fond.png');">
 
     <?php
-
-        /*
-        if (isset($_SESSION['offline'])) {
-            $montableau = $_SESSION['offline'];
-            foreach ($montableau as $element) {
-                $sql = "INSERT INTO `commande` (`id_commande`, `nom_client`, `nom_plat`) VALUES (NULL, '$nom','$element');";
-                $conn->query($sql);
-            }
-            unset($_SESSION['offline']);
-        }
-        */
-            echo '<table>';
-            echo '<tr>';
-            echo '<td>Image</td>';
-            echo '<td>Plat</td>';
-            echo '<td>Prix</td>';
-            echo '<td>Quantité</td>';
-            echo '</tr>';
-            foreach($orders as $commande) {
-                echo '<tr>';
-                    echo '<td></td>';
-                    echo '<td>' . $commande->nom_plat . '</td>';
-                    echo '<td></td>';
-                    echo '<td>' . $commande->quantite . '</td>';
-                echo '</tr>';
-            }
-            echo '</table>';
-
-            echo '<br/>';
-
-    /* else {
-        if (isset($_SESSION['offline'])) {
-            $montableau = $_SESSION['offline'];
-            foreach ($montableau as $element) {
-                echo $element . '<br>';
-            }
-        }
-    }*/
+    $total = [];
     ?>
+    <table>
+        <caption>Votre panier</caption>
+        <thead>
+            <th scope="col">Image</th>
+            <th scope="col">Plat</th>
+            <th scope="col">Prix unitaire</th>
+            <th scope="col">Quantité</th>
+        </thead>
+        <tbody>
+            <?php foreach ($orders as $commande) { ?>
+                <tr>
+                    <th scope="row"> <?php foreach ($json->data as $subarray) {
+                                            foreach ($subarray->items as $plat) {
+                                                if ($plat->name_fr == $commande->nom_plat) {
+                                                    $img = $plat->images[1];
+                                        ?><img src="<?= $img; ?>" style="width:40%">
+                        <?php
+                                                }
+                                            }
+                                        }
+                        ?></th>
+                    <td> <?= "$commande->nom_plat" ?></td>
+                    <td><?php foreach ($json->data as $subarray) {
+                            foreach ($subarray->items as $plat) {
+                                if ($plat->name_fr == $commande->nom_plat) {
+                                    foreach ($plat->prices as $prix) {
+                                        if ($commande->taille == NULL) {
+                                            $sous = $prix->price;
+                                            $tot = $sous * $commande->quantite;
+                                            array_push($total, $tot);
+                                            echo "$sous";
+                                        } else {
+                                            if ($commande->taille == $prix->size) {
+                                                $sous = $prix->price;
+                                                $tot = $sous * $commande->quantite;
+                                                array_push($total, $tot);
+                                                echo "$sous";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        ?>
+                    </td>
+                    <td class="quantite"> <?= "$commande->quantite" ?> </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+
+    <?php
+    $payer = 0;
+    for ($i = 0; $i <= count($total); $i++) {
+        $payer = $payer + $total[$i];
+    }
+
+    ?>
+    <div class="total">
+        <b>Total à payer :</b>
+        <?php echo "$payer €"; ?>
+    </div>
+
+    <button class="payer">Payer</button>
+    
+
+    <?php include('footer.php'); ?>
 </body>
 
 </html>

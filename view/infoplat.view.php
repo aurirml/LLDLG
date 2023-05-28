@@ -15,6 +15,11 @@
         <?php echo $plat->name_fr; ?>
     </div>
 
+    <div class="moyenne">
+        <?= "Note moyenne de $moyenne / 10"; ?>
+    </div>
+
+
     <?php
 
     $imageLinks = array();
@@ -127,12 +132,8 @@
         <?= "<b>Les avis sur notre $plat->name_fr</b>"; ?>
     </div>
 
-    <div class="moyenne">
-        <?= "Note moyenne de $moyenne / 10"; ?>
-    </div>
-
     <div class="notation">
-        <button type="button" class="collapsible">Open Collapsible</button>
+        <button type="button" class="collapsible">Avis précédent</button>
         <div class="content">
             <p>        <?php
         foreach ($notations as $avis) {
@@ -150,14 +151,7 @@
         </p>
         </div>
     </div>
-
-
-
-    <div class="author">
-        <?php echo "<br/>" ?>
-        <?php echo 'By : Allan Chopra & Auriane Ramel'; ?>
-    </div>
-
+        <?php include('footer.php'); ?>
 
 </body>
 

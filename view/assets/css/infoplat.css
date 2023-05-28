@@ -5,13 +5,6 @@ body{
     background-attachment: fixed;
 }
 
-.author{
-    font-family: papyrus;
-    font-size:20px;
-    margin-left: 10%;
-    bottom: 15px;
-}
-
 .plat{
     margin-top: 5px;
     margin-bottom: 35px;
@@ -61,7 +54,8 @@ body{
   .moyenne{
     font-size:40px;
     font-family:Optimax;
-    margin-left: 5%;
+    text-align:center;
+    margin-bottom: 1%;
   }
 
   .carrousel{

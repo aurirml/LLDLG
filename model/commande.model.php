@@ -13,7 +13,5 @@ class Commande{
     function __get($name) {
         return $this->$name;
       }
-
-
 }
 ?>

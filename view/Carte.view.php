@@ -9,7 +9,7 @@
 
 <?= include('nav.php');?>
 
-<body background="../view/assets/img/fond.png" onload="plat();"> 
+<body background="../view/assets/img/fond.png" onload="plat()";> 
 
     <div class="affichageplat">
         <?php
@@ -30,7 +30,7 @@
 
                 <div class="nomplat">
                     <?php echo $nom; ?>
-                    <button class="linkDetails" data-info-dish=<?= $items ?>> <img src="../view/assets/img/info.png"> </button>
+                    <a class="linkDetails" data-info-dish=<?= $items ?>> <img src="../view/assets/img/info.png"> </a>
                 </div>
 
         <?php

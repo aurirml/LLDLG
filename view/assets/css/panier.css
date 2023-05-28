@@ -1,3 +1,9 @@
+body{
+    background-color: #F9DBB8;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .container{
     width:50%;
     margin: auto;
@@ -56,3 +62,82 @@ input[type=submit]:hover, input[type=submit1]:hover {
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+table {
+    margin:auto;
+    table-layout: fixed;
+    margin-top:2%;
+    width: 50%;
+    border-collapse: collapse;
+    background-color: rgb(249,219,184,0.50);
+  }
+  
+  thead th:nth-child(1) {
+    width: 10%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 10%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 10%;
+  }
+  
+  thead th:nth-child(4) {
+    width: 10%;
+  }
+  
+  th, td {
+    padding: 20px;
+  }
+  
+  tbody td {
+    font-size:40px;
+    text-align: center;
+    font-family:Copperplate;
+  }
+  
+
+  tbody tr .img{
+    width:1%;
+  }
+
+  thead th{
+    font-size:50px;
+    font-family: copperplate;
+  }
+
+  thead th, tfoot th, tfoot td, tbody th, tbody td {
+    border: 3px solid #2f7752;
+  }
+
+  caption {
+    font-family: chalkduster;
+    padding: 20px;
+    font-size:70px;
+    color: #4DB881;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom:1%;
+  }
+ 
+  .total{
+    text-align:center;
+    font-size:50px;
+    margin-top:4%;
+    font-family: Chalkduster;
+  }
+
+  .payer{
+    background-color: #4DB881;
+    color: white;
+    font-size:30px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 12%;
+    margin-top:1%;
+    margin-left:44%;
+  }

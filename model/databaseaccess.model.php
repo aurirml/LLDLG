@@ -131,8 +131,6 @@ class DAO
             $quantite = $order->quantite + $commande->quantite;
 
         }
-        var_dump($quantite);
-        var_dump($insert);
         
         $insert->bindParam(':nom', $commande->nom_client);
         $insert->bindParam(':plat', $commande->nom_plat);

@@ -2,7 +2,6 @@
     <link rel="stylesheet" href="../view/assets/css/navig.css" />
 </head>
 <?php include("../controller/utils/sessionCheck.ctrl.php");?>
-<? var_dump($_SESSION); ?>
 
 <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="clark-house-nav navbar-3 w-nav">
     <div class="container-4 w-container">

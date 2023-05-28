@@ -3,7 +3,6 @@
 <head>
     <title>La Légende de la Gastronomie</title>
     <link rel="stylesheet" href="../view/assets/css/inscription.css" />
-    <script src="../view/assets/js/nomplat.js"></script>
     <link rel="icon" type="image/x-icon" href="../view/assets/img/Favicon.ico">
 </head>
 <?php include('nav.php')?>
@@ -33,6 +32,8 @@
             <input type="submit" value='Créer mon compte'>
         </form>
     </div>
+
+    <?php include('footer.php'); ?>
 </body>
 <?php
 if (isset($message)) {

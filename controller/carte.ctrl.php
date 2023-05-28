@@ -4,5 +4,5 @@
 
     $json = $apiclient->getAllPlat();
     
-    include("../view/Carte.view.php");
+    include("../view/carte.view.php");
 ?>
