@@ -30,25 +30,26 @@
             } else {
                 array_push($imageLinks, "../view/assets/img/error.png");
             }
+        } else {
+            array_push($imageLinks, "../view/assets/img/imagedispo.png");
         }
     }
 
     ?>
     <div class="carrousel">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <div class="slideshow-container">
 
             <?php
             foreach ($imageLinks as $img) {
             ?>
                 <div class="mySlides fade">
-                    <img src="<?= $img; ?>" style="width:100%">
+                    <img src="<?= $img; ?>">
                 </div>
             <?php
             }
             ?>
         </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
@@ -82,35 +83,34 @@
     $i = count($plat->prices);
 
     ?>
-        <div class="taille">
+    <div class="taille">
+        <?php
+        foreach ($plat->prices as $prix) {
+            $tarif = $prix->price;
+            $taille = $prix->size;
+
+            if ($i > 1) {
+                echo "<b>Taille </b>: $taille" ?><span style="float:right"><?= "<b>Prix</b>: $tarif € <br/>" ?> </span><?php
+                                                                                                                        } else {
+                                                                                                                            ?>
+                <div class="prix"> <?= "<b>Prix :</b> $tarif €"; ?></div>
             <?php
-            foreach ($plat->prices as $prix) {
-                $tarif = $prix->price;
-                $taille = $prix->size;
-
- if($i>1){
-                    echo "<b>Taille </b>: $taille" ?><span style="float:right"><?= "<b>Prix</b>: $tarif € <br/>"?> </span><?php
-                }
-                else{
-                    ?>
-                    <div class="prix"> <?= "<b>Prix :</b> $tarif €"; ?></div>
-                    <?php
-                }
-                ?>
-
-                <div class="ajouter">
-                    <form method="POST" class="connexion" action="../controller/infoplat.ctrl.php">
-                        <input type="hidden" name="formName" value="Panier" />
-                        <input type="hidden" name="size" value="<?= $taille ?>" />
-                        <input type="number" value="1" min="1" name="quantite" id="quantite2" placeholder="Quantité" />
-
-                        <input type="submit" class="ajout" name="bouton1" value='Ajouter au panier'>
-                    </form>
-                </div>
-            <?php
-            }
+                                                                                                                        }
             ?>
-        </div>
+
+            <div class="ajouter">
+                <form method="POST" class="connexion" action="../controller/infoplat.ctrl.php">
+                    <input type="hidden" name="formName" value="Panier" />
+                    <input type="hidden" name="size" value="<?= $taille ?>" />
+                    <input type="number" value="1" min="1" name="quantite" id="quantite2" placeholder="Quantité" />
+
+                    <input type="submit" class="ajout" name="bouton1" value='Ajouter au panier'>
+                </form>
+            </div>
+        <?php
+        }
+        ?>
+    </div>
 
 
     <div class="laisseravis">
