@@ -1,21 +1,4 @@
-
 let slideIndex = 1;
-
-function retrieveNom() {
-    // recupere les query parameters
-    let parameters = new URLSearchParams(document.location.search);
-    // recupere email passé en GET
-    let nom = parameters.get("nom");
-    console.log("retrieveNom "+nom);
-    writeNom(nom);
-}
-// Écrit l'email dans la balise P
-function writeNom(nom) {
-    let plat = document.getElementById("plat");
-// Insert du code html entre les balises <p></p>
-    plat.innerHTML = nom;
-}
-
 
 // Next/previous controls
 function plusSlides(n) {
@@ -38,10 +21,10 @@ function showSlides(n) {
   }
   
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active-dot", "");
   }
   slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
+  dots[slideIndex-1].className += " active-dot";
 }
 
 function initToggle(){

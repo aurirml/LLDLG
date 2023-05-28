@@ -1,7 +1,5 @@
 <?php
-ini_set ('display_errors', 1);
-ini_set ('display_startup_errors', 1);
-error_reporting (E_ALL);
+include("../controller/utils/sessionCheck.ctrl.php");
 
 if (isset($_POST['mdp']) && isset($_POST['nom'])) {
     $nom = $_POST['nom'];
@@ -13,14 +11,16 @@ if (isset($_POST['mdp']) && isset($_POST['nom'])) {
 
     if ($connected == true) {
         echo "connection réussite ";
-        session_start();
-        $_SESSION['con'] = $nom;
-        header("Location: ../view/Carte.php");
+
+        $_SESSION['username'] = $nom;
+        unset($_SESSION['isConnecter']);
+        $_SESSION['isConnected'] = true;
+        header("Location: ../controller/carte.ctrl.php");
         exit;
 
     } else {
-        session_start();
-        $_SESSION['message'] = "Nom d'utilisateur ou mot de passe incorrect(s)";
+
+        $message = "Nom d'utilisateur ou mot de passe incorrect(s)";
         //include('../view/connection.view.php');
     }
 } 

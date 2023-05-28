@@ -1,0 +1,29 @@
+body{
+    background-color: #F9DBB8;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.accueil{
+    margin-top:300px;
+    text-align:center;
+    font-size:200px;
+    font-family:chalkduster;
+    opacity:1;
+  }
+
+  .resto{
+    margin-top:10px;
+    font-size:50px;
+    font-family:papyrus;
+    text-align:center;
+  }
+
+  .author{
+    font-family: papyrus;
+    font-size:20px;
+    margin-left: 10%;
+    position: fixed;
+    bottom: 15px;
+}

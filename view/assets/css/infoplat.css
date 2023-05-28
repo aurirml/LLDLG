@@ -1,0 +1,248 @@
+body{
+    background-color: #F9DBB8;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.author{
+    font-family: papyrus;
+    font-size:20px;
+    margin-left: 10%;
+    bottom: 15px;
+}
+
+.plat{
+    margin-top: 5px;
+    margin-bottom: 35px;
+  
+    text-align: center;
+    font-size:70px;
+    color:#4DB881;
+    font-family: Chalkduster;
+    font-style:italic;
+  }
+  
+  .ingredients{
+    font-size:50px;
+    font-family: Optimax;
+  
+    margin-top: 1%;
+    text-align:center;
+  }
+
+  .prix{
+    margin-top:1%;
+    font-size:50px;
+    color:black;
+    font-family: Optimax;
+    text-align: center;
+  
+  }
+  
+  .taille{
+    position: relative;
+    margin: auto;
+    width:20%;
+  
+    margin-top:1%;
+    font-size:50px;
+    color:black;
+    font-family: Optimax;
+  align-items: center;
+  }
+
+  .avis{
+    font-size:50px;
+    font-family:Optimax;
+    margin-left: 5%;
+  }
+  
+  .moyenne{
+    font-size:40px;
+    font-family:Optimax;
+    margin-left: 5%;
+  }
+
+  .carrousel{
+    margin:auto;
+    position: relative;
+    width:30%;
+    height:45%;
+  
+  }
+  
+  .slideshow-container {
+    position: relative;
+    margin: auto;
+    max-width: 800px;
+  }
+
+  .mySlides {
+    display: none;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(107,182,132,0.8);
+  }
+  
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: darkseagreen;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin-top : 5px;
+    margin-bottom: 15px;
+  }
+  
+  .active-dot, .dot:hover {
+    background-color: darkcyan;
+  }
+  
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }  
+
+  input[type=submit]:hover {
+    background-color: rgba(61,143,101,1);
+    color: white;
+
+    border: 1px solid rgba(61,143,101,1);
+}
+
+input[type=submit]:hover {
+    background-color: rgba(61,143,101,1);
+    color: white;
+
+    border: 1px solid rgba(61,143,101,1);
+}
+
+.panier{
+    width:50%;
+    margin: auto;
+    margin-top: 1%;
+   }
+
+
+   .ajout1 {
+    font-family: Copperplate;
+    background-color: #4DB881;
+    color: white;
+    font-size:40px;
+
+    padding: 14px 20px;
+
+    border: none;
+    cursor: pointer;
+
+    margin-left:38%;
+
+    margin-top: 0.6%;
+
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.ajout2 {
+    font-family: Copperplate;
+    background-color: #4DB881;
+    color: white;
+    font-size:40px;
+    padding: 14px 20px;
+    margin-left:50%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  
+  .content {
+    padding: 0 18px;
+    background-color: white;
+  
+    display:none;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  .content.visible{
+    display:block;
+  }
+  
+  .collapsible:after {
+    content: '\02795'; 
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; 
+  }

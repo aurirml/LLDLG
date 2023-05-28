@@ -5,9 +5,99 @@ body{
     background-attachment: fixed;
 }
 
+.author{
+    font-family: papyrus;
+    font-size:20px;
+    margin-left: 10%;
+    position: fixed;
+    bottom: 15px;
+}
+
 .avis{
     font-size:50px;
     font-family:Optimax;
 
     text-align:center;
+}
+
+.message{
+    font-size:50px;
+    font-family:Chalkduster;
+  
+    text-align:center;
+    margin-top: 2%;
+  }
+
+  .container{
+    width:30%;
+    margin:0 auto;
+    margin-top:0.7%;
+   }
+
+input[type=number], input[type=text] {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 2%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color:rgba(249,219,184,0.50);
+    color:#4F483E;
+}
+
+.precedent{
+    font-size:50px;
+    font-family:Chalkduster;
+    text-align:center;
+    margin-top: 3%;
+  }
+  
+  .autre{
+  
+    background-color: rgba(249,219,184,0.50);
+  }
+
+  blockquote {
+    margin: 0;
+    font-size:30px;
+  }
+  
+  blockquote p {
+    padding: 15px;
+    background: rgba(107,182,132,0.33);
+    border-radius: 5px;
+  }
+  
+  blockquote p::before {
+    content: '\201C';
+  }
+  
+  blockquote p::after {
+    content: '\201D';
+  }
+  
+  figcaption{
+    font-size: 30px;
+  }
+
+  input[type=submit]:hover {
+    background-color: rgba(61,143,101,1);
+    color: white;
+    border: 1px solid rgba(61,143,101,1);
+}
+
+      /* Set a style for all buttons */
+input[type=submit] {
+    font-family: Copperplate;
+    background-color: #4DB881;
+    color: white;
+    font-size:30px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-left:35%;
 }
