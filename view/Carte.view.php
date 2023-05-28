@@ -41,12 +41,7 @@
         <div class="espace"><?= "<br/>"; ?></div>
     </div>
 
-
-    <div class="author">
-        <?php echo 'By : Allan Chopra & Auriane Ramel'; ?>
-    </div>
-
-    <?php echo '<br/>'; ?>
+    <?= include('footer.php'); ?>
 
 </body>
 

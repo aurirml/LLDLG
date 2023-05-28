@@ -79,24 +79,8 @@
 
     <?php
 
-    $i = 0;
+    $i = count($plat->prices);
 
-    foreach ($plat->prices as $prix) {
-        $i++;
-    }
-    if ($i == 1) {
-        $tarif = $prix->price;
-
-    ?>
-        <div class="prix"> <?= "<b>Prix :</b> $tarif €"; ?></div>
-        <div class="panier">
-            <form method="POST" class="connexion" action="../controller/infoplat.ctrl.php">
-                <input type="hidden" name="formName" value="Panier" />
-                <input type="submit" class="ajout1" name="bouton1" value='Ajouter au panier'>
-            </form>
-        </div>
-    <?php
-    } elseif ($i >= 1) {
     ?>
         <div class="taille">
             <?php
@@ -104,54 +88,68 @@
                 $tarif = $prix->price;
                 $taille = $prix->size;
 
-            ?>
+ if($i>1){
+                    echo "<b>Taille </b>: $taille" ?><span style="float:right"><?= "<b>Prix</b>: $tarif € <br/>"?> </span><?php
+                }
+                else{
+                    ?>
+                    <div class="prix"> <?= "<b>Prix :</b> $tarif €"; ?></div>
+                    <?php
+                }
+                ?>
 
-                <?php echo "<b>Taille </b>: $taille" ?><span style="float:right"><?= "<b>Prix</b>: $tarif € <br/>"; ?></span>
                 <div class="ajouter">
                     <form method="POST" class="connexion" action="../controller/infoplat.ctrl.php">
                         <input type="hidden" name="formName" value="Panier" />
                         <input type="hidden" name="size" value="<?= $taille ?>" />
-                        <input type="submit" class="ajout2" name="bouton1" value='Ajouter au panier'>
+                        <input type="number" value="1" min="1" name="quantite" id="quantite2" placeholder="Quantité" />
+
+                        <input type="submit" class="ajout" name="bouton1" value='Ajouter au panier'>
                     </form>
                 </div>
             <?php
             }
             ?>
-        </div><?php
-            }
-                ?>
+        </div>
+
+
+    <div class="laisseravis">
+        Laissez votre avis sur notre <?= "$plat->name_fr" ?> !
+    </div>
 
     <form class="form" method="POST" action="<?php echo ($_SESSION['isConnected']) ? "../controller/infoplat.ctrl.php" : '../controller/connection.ctrl.php'; ?>">
         <input type="number" name="note" id="note" min="0" max="10" placeholder="entrez une note sur dix" />
         <input type="hidden" name="formName" value="Notation" />
+        <br /> <br />
         <input type="text" name="com" id="com" placeholder="entrez votre commentaire" />
+        <br />
         <input type="submit" name="bouton2" value="Envoyer">
-
     </form>
-    <div class="avis">
-        <?= "<b>Les avis sur notre $plat->name_fr</b>"; ?>
-    </div>
 
     <div class="notation">
         <button type="button" class="collapsible">Avis précédent</button>
         <div class="content">
-            <p>        <?php
-        foreach ($notations as $avis) {
-        ?>
-            <figure>
-                <figcaption>— <?= $avis->nom ?>, <cite>Note de : <?= $avis->note ?> / 10.</cite> Commentaire : </figcaption>
-                <blockquote>
-                    <p><?= $avis->com ?></p>
-                </blockquote>
+            <p>
+            <div class="grille">
+                <?php
+                foreach ($notations as $avis) {
+                ?>
+                    <div class="autre">
 
-            </figure>
-        <?php
-        }
-        ?>
-        </p>
+                        <figure>
+                            <figcaption>— <?= $avis->nom ?>, <cite>Note de : <?= $avis->note ?> / 10.</cite><br /> Commentaire : </figcaption>
+                            <blockquote>
+                                <p><?= $avis->com ?></p>
+                            </blockquote>
+
+                        </figure>
+                    </div>
+                <?php } ?>
+            </div>
+            </p>
         </div>
     </div>
-        <?php include('footer.php'); ?>
+    <?php include('footer.php'); ?>
 
 </body>
 

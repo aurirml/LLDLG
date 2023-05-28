@@ -18,7 +18,7 @@ body{
   
   .ingredients{
     font-size:50px;
-    font-family: Optimax;
+    font-family: Copperplate;
   
     margin-top: 1%;
     text-align:center;
@@ -28,7 +28,7 @@ body{
     margin-top:1%;
     font-size:50px;
     color:black;
-    font-family: Optimax;
+    font-family: Copperplate;
     text-align: center;
   
   }
@@ -41,19 +41,19 @@ body{
     margin-top:1%;
     font-size:50px;
     color:black;
-    font-family: Optimax;
+    font-family: Copperplate;
   align-items: center;
   }
 
   .avis{
     font-size:50px;
-    font-family:Optimax;
+    font-family:Copperplate;
     margin-left: 5%;
   }
   
   .moyenne{
     font-size:40px;
-    font-family:Optimax;
+    font-family:Copperplate;
     text-align:center;
     margin-bottom: 1%;
   }
@@ -67,8 +67,9 @@ body{
   }
   
   .slideshow-container {
-    position: relative;
+
     margin: auto;
+    margin-top: auto;
     max-width: 800px;
   }
 
@@ -164,63 +165,89 @@ input[type=submit]:hover {
     width:50%;
     margin: auto;
     margin-top: 1%;
+    justify-content: center;
    }
 
 
-   .ajout1 {
-    font-family: Copperplate;
-    background-color: #4DB881;
-    color: white;
-    font-size:40px;
-
-    padding: 14px 20px;
-
-    border: none;
-    cursor: pointer;
-
-    margin-left:38%;
-
-    margin-top: 0.6%;
-
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+.ajouter{
+  margin:auto;
 }
 
-.ajout2 {
+.connexion{
+  margin-top:0.5%;
+}
+
+.ajout{
     font-family: Copperplate;
     background-color: #4DB881;
     color: white;
     font-size:40px;
     padding: 14px 20px;
-    margin-left:50%;
+padding:center;
+
+width:70%;
+margin:0 auto;
+display:block;
+float:none;
+
+margin-top:1%;
     border: none;
     cursor: pointer;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
+.notation{
+  width:70%;
+  margin:auto;
+  background-color: rgba(249,219,184,0.50);
+  margin-top: 1%;
+}
 
 .collapsible {
-    background-color: #eee;
+  background-color:rgba(77,184,129,0.33);
     color: #444;
+    font-size:50px;
+    font-family:Chalkduster;
+    text-align:center;
     cursor: pointer;
     padding: 18px;
     width: 100%;
     border: none;
-    text-align: left;
+
     outline: none;
-    font-size: 15px;
+
+  }
+
+  .collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 20px;
+    color: white;
+    float: right;
+    margin:auto;
+    margin-top:0.5%;
   }
   
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+  
+  figcaption, cite{
+
+    font-family:Copperplate;
+  }
   
   .active, .collapsible:hover {
-    background-color: #ccc;
+    background-color:rgba(77,184,129,0.33);
   }
   
-  
+  #form {
+    margin:auto;
+  }
   .content {
     padding: 0 18px;
-    background-color: white;
-  
+    font-size:30px;
+
     display:none;
     transition: max-height 0.2s ease-out;
   }
@@ -228,15 +255,157 @@ input[type=submit]:hover {
   .content.visible{
     display:block;
   }
-  
-  .collapsible:after {
-    content: '\02795'; 
-    font-size: 13px;
-    color: white;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .active:after {
-    content: "\2796"; 
-  }
+
+  input[type=text] {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    width: 30%;
+
+    margin:0 auto;
+    display:block;
+    float:none;
+
+    padding: 12px 20px;
+
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color:rgba(249,219,184,0.50);
+    color:#4F483E;
+}
+
+input[id=quantite]{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+  text-align:center;
+  width:20%;
+
+  margin:0 auto;
+  display:block;
+  float:none;
+
+  padding: 12px 20px;
+
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color:rgba(249,219,184,0.50);
+  color:#4F483E;
+}
+
+input[id=quantite2]{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+  text-align:center;
+  width:70%;
+
+  margin:0 auto;
+  display:block;
+  float:none;
+  margin-top:2%;
+
+  padding: 12px 20px;
+
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color:rgba(249,219,184,0.50);
+  color:#4F483E;
+}
+
+input[id=note]{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
+  width: 30%;
+
+  margin:0 auto;
+  display:block;
+  float:none;
+
+  padding: 12px 20px;
+
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color:rgba(249,219,184,0.50);
+  color:#4F483E;
+}
+
+.laisseravis{
+  margin-top:3%;
+  margin-bottom:1%;
+
+  text-align:center;
+  font-size:50px;
+  font-family:Chalkduster;
+}
+
+input[name=bouton2]:hover {
+  background-color: rgba(61,143,101,1);
+  color: white;
+  border: 1px solid rgba(61,143,101,1);
+}
+
+    /* Set a style for all buttons */
+input[name=bouton2] {
+  font-family: Copperplate;
+  background-color: #4DB881;
+  color: white;
+  font-size:40px;
+  padding: 14px 20px;
+
+  border: none;
+  cursor: pointer;
+  width: 30%;
+
+margin:0 auto;
+display:block;
+float:none;
+
+  margin-top:1%;
+
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.grille {
+  margin-top:2%;
+  display: grid;
+  padding-bottom: 2%;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px 2em;
+}
+
+.grille :first-child {
+    align-self: center;
+}
+    
+
+.autre{
+  background-color: rgba(249,219,184,0.50);
+}
+
+blockquote {
+  margin: 0;
+  font-size:30px;
+}
+
+blockquote p {
+  padding: 15px;
+  background: rgba(107,182,132,0.33);
+  border-radius: 5px;
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+
+blockquote p::after {
+  content: '\201D';
+}
+
+figcaption{
+  padding-top: 4px;
+  font-size: 30px;
+}

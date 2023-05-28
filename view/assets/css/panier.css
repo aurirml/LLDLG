@@ -4,64 +4,6 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
-.container{
-    width:50%;
-    margin: auto;
-    margin-top: 1%;
-   }
-
-
-input[type=submit]:hover, input[type=submit1]:hover {
-    background-color: rgba(61,143,101,1);
-    color: white;
-
-    border: 1px solid rgba(61,143,101,1);
-}
-
-.container2{
-    width:80%;
-    margin: auto;
-    margin-top: 1%;
-   }
-
-   input[type=submit]:hover, input[type=submit1]:hover {
-    background-color: rgba(61,143,101,1);
-    color: white;
-
-    border: 1px solid rgba(61,143,101,1);
-}
-
-      /* Set a style for all buttons */
-.ajout1 {
-    font-family: Copperplate;
-    background-color: #4DB881;
-    color: white;
-    font-size:40px;
-
-    padding: 14px 20px;
-
-    border: none;
-    cursor: pointer;
-
-    margin: auto;
-    margin-left:38%;
-
-    margin-top: 0.6%;
-
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-.ajout2 {
-    font-family: Copperplate;
-    background-color: #4DB881;
-    color: white;
-    font-size:40px;
-    padding: 14px 20px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
 
 table {
     margin:auto;
@@ -126,6 +68,7 @@ table {
     text-align:center;
     font-size:50px;
     margin-top:4%;
+    margin-bottom:1%;
     font-family: Chalkduster;
   }
 
@@ -134,10 +77,12 @@ table {
     color: white;
     font-size:30px;
     padding: 14px 20px;
-    margin: 8px 0;
+
     border: none;
     cursor: pointer;
     width: 12%;
-    margin-top:1%;
-    margin-left:44%;
+    
+    margin:0 auto;
+    display:block;
+    float:none;
   }

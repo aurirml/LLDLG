@@ -20,22 +20,25 @@
             <input type="submit" value="Envoyer">
         </form>
     </div>
-    <?= "<br/>" ?>
-    <div class="precedent"><?= "Avis précédents" ?></div>
-    <div class="autre">
+    <br />
+
+    <div class="precedent">Avis précédents</div>
+
+    <div class="grille">
         <?php
         foreach ($notations as $avis) {
         ?>
-            <figure>
-                <figcaption>— <?= $avis->nom ?>, <cite>Note de : <?= $avis->note ?> / 10.</cite> Commentaire : </figcaption>
-                <blockquote>
-                    <p><?= $avis->com ?></p>
-                </blockquote>
+            <div class="autre">
 
-            </figure>
-        <?php
-        }
-        ?>
+                <figure>
+                    <figcaption>— <?= $avis->nom ?>, <cite>Note de : <?= $avis->note ?> / 10.</cite><br /> Commentaire : </figcaption>
+                    <blockquote>
+                        <p><?= $avis->com ?></p>
+                    </blockquote>
+
+                </figure>
+            </div>
+        <?php } ?>
     </div>
 
     <?php include('footer.php'); ?>

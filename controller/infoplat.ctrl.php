@@ -6,8 +6,6 @@ include("../controller/utils/sessionCheck.ctrl.php");
 
 $plat = json_decode(urldecode($_SESSION['currentDish']));
 
-$moyenne = $dao->calculAverage($plat->name_fr);
-
 if (isset($_POST['formName'])) {
     $formName = $_POST['formName'];
 
@@ -36,19 +34,31 @@ if (isset($_POST['formName'])) {
 
         $commande->nom_plat = $plat->name_fr;
         $commande->taille = $_POST['size'];
-        $commande->quantite = 1;
+        $commande->quantite = $_POST['quantite'];
+        if (is_numeric($commande->quantite)) {
+            if ($commande->quantite < 1) {
+                $commande->quantite = 1;
+            }
+        }
 
         if (!$_SESSION['isConnected']) {
-            if (!isset($_SESSION['panierOffLine'])) {
-                $_SESSION['panierOffLine'] = array();
+            $found = false;
+            foreach ($_SESSION['panierOffLine'] as $orderOffLine) {
+                if($orderOffLine->nom_plat == $commande->nom_plat && $orderOffLine->taille == $commande->taille){
+                    $found=true;
+                    $orderOffLine->quantite += $commande->quantite;
+                }
             }
-            array_push($_SESSION['panierOffLine'], $commande);
-        }
-        else{
+            if(!$found){
+                array_push($_SESSION['panierOffLine'], $commande);
+            }
+
+        } else {
             $commande->nom_client = $_SESSION['username'];
-            $dao->insertOrder($commande);
+            $dao->handleOrder($commande);
         }
     }
 }
 $notations = $dao->getNotations($plat->name_fr);
+$moyenne = $dao->calculAverage($plat->name_fr);
 include("../view/infoplat.view.php");

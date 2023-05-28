@@ -45,9 +45,20 @@ input[type=number], input[type=text] {
     text-align:center;
     margin-top: 3%;
   }
+
+  .grille {
+    margin-top:2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 2em;
+  }
+  
+  .grille :first-child {
+      align-self: center;
+  }
+      
   
   .autre{
-  
     background-color: rgba(249,219,184,0.50);
   }
 
@@ -71,6 +82,7 @@ input[type=number], input[type=text] {
   }
   
   figcaption{
+    padding-top: 4px;
     font-size: 30px;
   }
 
@@ -87,9 +99,21 @@ input[type=submit] {
     color: white;
     font-size:30px;
     padding: 14px 20px;
-    margin: 8px 0;
+
     border: none;
+
+
+    margin:0 auto;
+    display:block;
+    float:none;
+
+
     cursor: pointer;
     width: 30%;
     margin-left:35%;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

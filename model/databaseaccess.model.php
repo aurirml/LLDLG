@@ -16,7 +16,6 @@ class DAO
             $servername = 'localhost';
 
             $this->db = new PDO('mysql:host=' . $servername . ';dbname=' . $dataBaseName . ';charset=utf8', $username, $password);
-
         } catch (PDOException $e) {
             exit('[ERREUR OUVERTURE PDO]' . $e->getMessage());
         }
@@ -83,10 +82,9 @@ class DAO
         $moyenne->execute();
         $average = $moyenne->fetch();
 
-        if($average['moyenne'] != NULL){
-        return number_format($average['moyenne'], 1);
-        }
-        else{
+        if ($average['moyenne'] != NULL) {
+            return number_format($average['moyenne'], 1);
+        } else {
             return "Non noté";
         }
     }
@@ -103,7 +101,8 @@ class DAO
         return $avis;
     }
 
-    function insertNotation($notation){
+    function insertNotation($notation)
+    {
         $insert = $this->db->prepare('INSERT INTO projet (nom, note, com, nom_plat) VALUES (:nom, :note, :com, :plat);');
 
         $insert->bindParam(':nom', $notation->nom);
@@ -112,34 +111,35 @@ class DAO
         $insert->bindParam(':plat', $notation->nom_plat);
 
         return $insert->execute();
-
     }
 
-    function insertOrder($commande){
+    function handleOrder($commande)
+    {
         $insert = NULL;
         $quantite = 1;
-        $order = $this->getOrder($commande->nom_client, $commande->nom_plat);
+        $order = $this->getOrder($commande->nom_client, $commande->nom_plat, $commande->taille);
 
-        if($order->nom_plat == NULL){
+        if ($order->nom_plat == NULL) {
             $insert = $this->db->prepare('INSERT INTO commande (nom_client, nom_plat, taille, quantite) VALUES (:nom, :plat, :taille, :quantite);');
             $quantite = $commande->quantite;
-            $insert->bindParam(':taille', $commande->taille);
-        }
-        else{
-            $insert = $this->db->prepare('UPDATE commande SET quantite = :quantite WHERE nom_client = :nom AND nom_plat = :plat;');
-
+        } else {
             $quantite = $order->quantite + $commande->quantite;
-
+            if ($quantite <= 0) {
+                return $this->deleteOrder($commande);
+            }
+            $insert = $this->db->prepare('UPDATE commande SET quantite = :quantite WHERE nom_client = :nom AND nom_plat = :plat AND taille = :taille;');
         }
-        
+
         $insert->bindParam(':nom', $commande->nom_client);
         $insert->bindParam(':plat', $commande->nom_plat);
         $insert->bindParam(':quantite', $quantite);
+        $insert->bindParam(':taille', $commande->taille);
 
         return $insert->execute();
     }
 
-    function getOrders($nom){
+    function getPanier($nom)
+    {
         $get = $this->db->prepare('SELECT * FROM commande WHERE nom_client=:nom;');
 
         $get->bindParam(':nom', $nom);
@@ -150,11 +150,13 @@ class DAO
         return $orders;
     }
 
-    function getOrder($nom, $plat){
-        $get = $this->db->prepare('SELECT * FROM commande WHERE nom_client=:nom AND nom_plat=:plat;');
+    function getOrder($nom, $plat, $taille)
+    {
+        $get = $this->db->prepare('SELECT * FROM commande WHERE nom_client=:nom AND nom_plat=:plat AND taille=:taille;');
 
         $get->bindParam(':nom', $nom);
         $get->bindParam(':plat', $plat);
+        $get->bindParam(':taille', $taille);
 
         $get->execute();
         $get->setFetchMode(PDO::FETCH_CLASS, 'Commande');
@@ -163,7 +165,22 @@ class DAO
         return $order;
     }
 
-    function deleteOrder(){
+    function deletePanier($nom)
+    {
+        $delete = $this->db->prepare('DELETE FROM commande WHERE nom_client = :nom;');
 
+        $delete->bindParam(':nom', $nom);
+
+        return $delete->execute();
+    }
+
+    function deleteOrder($commande){
+        $delete = $this->db->prepare('DELETE FROM commande WHERE nom_client = :nom AND nom_plat = :nom_plat AND taille = :taille;');
+
+        $delete->bindParam(':nom', $commande->nom_client);
+        $delete->bindParam(':taille', $commande->taille);
+        $delete->bindParam(':nom_plat', $commande->nom_plat);
+
+        return $delete->execute();
     }
 }
