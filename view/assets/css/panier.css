@@ -86,3 +86,14 @@ table {
     display:block;
     float:none;
   }
+
+  .connexion{
+  text-align: center;
+  font-family: Chalkduster;
+  font-size: 50px;
+  }
+
+.link{
+  text-decoration : none;
+  color:darkslategray;
+  }

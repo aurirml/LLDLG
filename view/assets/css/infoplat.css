@@ -382,7 +382,6 @@ input[name=bouton2] {
   display: block;
   float: none;
 
-  margin-top: 1%;
 
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -433,3 +432,14 @@ figcaption {
   padding-top: 4px;
   font-size: 30px;
 }
+
+.connexion{
+  text-align: center;
+  font-family: Chalkduster;
+  font-size: 50px;
+  }
+
+.link{
+  text-decoration : none;
+  color:darkslategray;
+  }

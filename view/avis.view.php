@@ -10,6 +10,9 @@
 
 <body style="background-image: url('../view/assets/img/fond.png');">
 
+<?php if($_SESSION['isConnected']){
+    ?>
+
     <div class="message"><?= "Laissez votre avis sur notre restaurant !" ?></div>
     <div class="container">
         <form class="form" method="POST" action="<?php echo ($_SESSION['isConnected']) ? '../controller/avis.ctrl.php' : '../controller/connection.ctrl.php'; ?>">
@@ -20,7 +23,16 @@
             <input type="submit" value="Envoyer">
         </form>
     </div>
-    <br />
+    <br/>
+    <?php
+    }
+    else{
+        ?>
+        <div class="connexion"> <a href="../controller/connexion.ctrl.php" class="link">Connectez-vous</a> pour laisser votre avis!</div>
+        <?php
+    }
+
+    ?>
 
     <div class="precedent">Avis précédents</div>
 

@@ -43,6 +43,11 @@
                         <?php
                                                         }
                                                     }
+                                                    else{
+                                                        $img = "../view/assets/img/imagedispo.png";
+                                                        ?><img src="<?= $img; ?>" style="width:40%">
+                                                        <?php
+                                                    }
                                                 }
                                             }
                                         }
@@ -82,9 +87,18 @@
         <?php echo "$payer €"; ?>
     </div>
 
+    <?php if($_SESSION['isConnected']){?>
     <form class="form" method="POST" action="<?php echo ($_SESSION['isConnected']) ? "../controller/panier.ctrl.php" : '../controller/connection.ctrl.php'; ?>">
         <input type="submit" class="payer" name="payer" value="Payer">
     </form>
+    <?php
+    }
+    else{
+        ?>
+        <div class="connexion"> <a href="../controller/connexion.ctrl.php" class="link">Connectez-vous</a> pour payer !</div>
+        <?php
+    }
+    ?>
 
 </body>
 

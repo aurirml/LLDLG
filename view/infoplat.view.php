@@ -112,19 +112,29 @@
         ?>
     </div>
 
+    <?php if($_SESSION['isConnected']){
+    ?>
 
-    <div class="laisseravis">
-        Laissez votre avis sur notre <?= "$plat->name_fr" ?> !
+    <div class="laisseravis"> Laissez votre avis sur notre <?= "$plat->name_fr" ?> !</div>
+    <div class="container">
+        <form class="form" method="POST" action="<?php echo ($_SESSION['isConnected']) ? '../controller/avis.ctrl.php' : '../controller/connection.ctrl.php'; ?>">
+            <input type="number" name="note" id="note" min="0" max="10" placeholder="Entrez une note sur dix" />
+            <br/>
+            <input type="text" name="com" id="com" placeholder="Entrez votre commentaire" />
+            <br/>
+            <input type="submit" name="bouton2" value="Envoyer">
+        </form>
     </div>
+    <br/>
+    <?php
+    }
+    else{
+        ?>
+        <div class="connexion"> <a href="../controller/connexion.ctrl.php" class="link">Connectez-vous</a> pour laisser votre avis sur notre <?= "$plat->name_fr" ?>  !</div>
+        <?php
+    }
 
-    <form class="form" method="POST" action="<?php echo ($_SESSION['isConnected']) ? "../controller/infoplat.ctrl.php" : '../controller/connection.ctrl.php'; ?>">
-        <input type="number" name="note" id="note" min="0" max="10" placeholder="entrez une note sur dix" />
-        <input type="hidden" name="formName" value="Notation" />
-        <br /> <br />
-        <input type="text" name="com" id="com" placeholder="entrez votre commentaire" />
-        <br />
-        <input type="submit" name="bouton2" value="Envoyer">
-    </form>
+    ?>
 
     <div class="notation">
         <button type="button" class="collapsible">Avis précédent</button>
